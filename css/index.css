@@ -1,0 +1,255 @@
+body {overflow: hidden;}
+* {
+	margin: 0;padding: 0; 
+	box-sizing: border-box;
+	font-size:medium;	
+	/* ajustes */
+	user-select: none;
+	-webkit-touch-callout: none;	
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent; /* fallout */
+}
+header {
+	position: absolute;
+	top: 0;
+	left: 0;	
+	right: 0;
+	z-index: 1;
+	padding: 0;
+	display: flex;
+	justify-content: space-between;	
+background-color: #222;	
+}
+.color-quotes {
+	font-family: montserrat;
+	background-color: #222;
+	color: #fff;
+	padding: 10px 10px 10px 5px;
+}
+.iframe-facebook {
+	/* border top #4C69B9 */
+	/* border bottom #3B55A1 */
+	/*background: linear-gradient(#3B55A1,#4C69B9);
+	background: radial-gradient(#4C69B9,#3B55A1);*/
+	/*background-color: #222;	*/
+	background-color: rgba(34,34,34,1);	
+	padding: 10px 8px 0 8px;
+	position: relative;
+	z-index: 5;
+}
+
+header .button:hover {
+	background-color: #333;
+	color: #fff;
+}
+
+.balloon {
+ position: fixed;
+ z-index: 4;
+ right: 5px;
+ top: 40px;
+ background: #ff0;
+}
+
+
+.tooltip.show > .content {
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+.tooltip {
+	position: absolute;
+	top: 50px;
+	right: 270px;	
+	display: inline-block;	
+	z-index: 5;	
+}
+.tooltip > .content {
+	cursor: pointer;
+	display: relative;
+	opacity: 0;
+	width: 220px;
+	line-height: 40px;
+	text-align: center;
+	padding: 0;
+	background-color: #c00;
+	color: #fff;		
+	border-radius: 0px;
+	position: absolute;
+	font-family: Open Sans;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 92%;
+	transform: translateY(30px);
+	transition: all 1s ease 0s;	
+}
+.tooltip .content::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -8px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #c00 transparent;
+}
+
+main {
+	position: relative;
+	z-index: 0;
+}
+footer {	
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+}
+footer .about {
+	display: inline-block;
+	margin-bottom: 0px;
+	transform: translateX(-50%);
+	background-color: #222;
+	color: #fff;
+}
+
+/* fondo paleta color */			
+.flex {display: flex;}			
+.red1 {background-color: #c00;}
+.red2 {background-color: #d55;}
+.red3 {background-color: #eaa;}			
+.green1 {background-color: #91C231;}
+.green2 {background-color: #B5D675;}
+.green3 {background-color: #DAEABA;}			
+.blue1 {background-color: #58859C;}
+.blue2 {background-color: #8FADBD;}
+.blue3 {background-color: #C7D6DE;}			
+.col {height: 100vh;outline: 1px solid #fff;position: relative;}
+.w33 {width: 33.3333%;}	
+.w50 {width: 50%;}
+.col.flex > .col:after {
+	content: "";
+	position: absolute;
+	background-color: rgba(0,0,0,.3);
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 33.3333vh;				
+	outline: 0px solid #fff;
+}
+.col.flex > .col:before {
+	content: "";
+	position: absolute;
+	background-color: rgba(0,0,0,.1);
+	bottom: 33.3333vh;
+	right: 0;
+	left: 0;
+	height: 33.3333vh;				
+}
+/* elmeentos app */			
+.quote { /* contenedor flex de .element */
+	position: absolute;
+	top:0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	transition: all 1s ease 0s;		
+}	
+/*blockquote:hover .cita {	
+	box-shadow: 0px 0px 30px #fff;
+}*/
+blockquote {
+	cursor: pointer;
+	margin: auto; /* para centrar en el contendedor flex */
+}
+.cita {
+	/*box-shadow: 0px 0px 50px #fff;*/
+	border-radius: 0px;
+	padding: 10px 15px;
+	color: #fff;
+	text-shadow: 1px 1px 0 #1a1a1a;
+	line-height: 1.15;	
+	font-size: 25px;
+	will-change: transform;
+	transition: all 1s ease 0s;
+}	
+.autor {
+	display:inline-block;
+	float: right;
+	background-color:  #222;
+	color: #fff;
+	text-shadow: 1px 1px 0 #1a1a1a;	
+	padding: 10px 15px;	
+	position: relative;
+	top: -.25em;
+	left: -10%;	
+	transition: all 1s ease 0s;
+	will-change: transform;
+	font-size: 22px;
+}
+/* transforms */
+.no-rotate {transform: rotate(0);}
+.rotate-right {transform: rotate(3deg);}
+.rotate-left {transform: rotate(-3deg);}
+
+.opacity-0 {opacity: 0;}
+.opacity-1 {opacity: 1;}
+
+/* fondo de color de citas */
+.bg-transparent {background-color: transparent;}
+.bg-white {background-color: rgba(255,255,255,.4);}
+.bg-grey {background-color: rgba(140,150,156,.7);}
+.bg-green {background-color: rgba(150,165,130,.7);}
+.bg-orange {background-color: rgba(255,155,0,.7);}
+.bg-black {background-color: rgba(0,0,0,.6);}
+.bg-red {background-color: rgba(204,0,0,.7);}
+.bg-blue {background-color: rgba(0,120,190,.7);}
+.bg-yellow {background-color: rgba(190,190,0,.8);}
+
+/* tipografías */
+.font-montserrat {font-family: Montserrat;}
+.font-open-sans {font-family: Open Sans;}		
+.font-roboto-slab {font-family: Roboto Slab;}
+.font-patua-one {font-family: Patua One;}
+.font-philosopher {font-family: Philosopher;}
+
+.font-berkshire-swash {font-family: Berkshire Swash;}
+.font-gloria-hallelujah {font-family: Gloria Hallelujah;}
+
+.font-gochi-hand {font-family: Gochi Hand;}
+.font-gochi-hand.cita {font-size: 30px;}
+.font-gochi-hand.autor {font-size: 25px;}
+
+.font-pacifico {font-family: Pacifico;}
+.font-pacifico.cita {font-size: 30px;}
+.font-pacifico.autor {font-size: 25px;}
+
+
+/*.font-pt-serif {font-family: PT Serif;}
+.font-exo-2 {font-family: Exo 2;}
+.font-sofadi-one {font-family: Sofadi One;}*/
+
+/* media queries */
+@media (max-width: 360px) {
+	header {
+		background-color: #222;
+	}
+	.iframe-facebook {
+		padding-top: 5px;
+		width: 120px;
+		overflow: hidden;
+	}
+	header .color-quotes {
+		padding-top: 20px;
+	}
+}
+@media (max-width: 768px) {
+	blockquote {max-width: 90%;}
+}
+@media (min-width: 768px) {
+	blockquote {max-width: 60%;}	
+}
+@media (min-width: 1024px) {
+	blockquote {max-width: 50%;}
+}

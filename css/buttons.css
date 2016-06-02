@@ -1,0 +1,22 @@
+.circled {
+	cursor:pointer;
+	border: 0;
+	text-decoration: none;
+	display: inline-block;
+	text-transform: uppercase;	
+	color: #333;	
+	background-color: rgba(255,255,255,0.5);	
+	display: inline-block;
+	text-align: center;
+	border-radius: 50%;
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	font-family: Montserrat;
+	font-size: small;
+	padding: 0;
+}
+.button.dark {
+	background-color: #222;
+	color: #fff;
+}

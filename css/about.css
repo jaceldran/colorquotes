@@ -1,0 +1,25 @@
+
+p {margin: 10px 0;line-height:1.5}
+dt {font-weight: bold;}
+dd {margin: 0 1em;line-height:1.5;}
+
+/* 
+ * ajustes modale
+ */
+.modale {font-family: Open Sans,sans-serif;} 
+.modale .footer {
+	background-color: transparent;
+	height: 75px;
+	line-height: 75px;
+}
+.modale .header {text-transform: uppercase; font-family: montserrat;}
+.modale .main {bottom: 75px; font-size: large;}
+.modale a {color: #333;text-decoration: none;font-weight: bold;}
+.modale a:hover {text-decoration: underline;}
+.modale .social {display: flex;	justify-content: space-between;}
+.modale .social a {text-decoration: none;font-size: 40px;}
+.modale .social .brand img {height: 40px;margin-left: 15px;}
+.modale .social a.facebook {color: #4862A3;} 
+.modale .social a.twitter {color: #1DA1F2;} 
+
+.bg-black {background-color: rgba(0,0,0,.5);}

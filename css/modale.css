@@ -1,0 +1,141 @@
+
+.overlay {
+	background-color: rgba(0,0,0,.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+}
+
+
+/*
+ * modale
+ * interfaz modal para gestionar preguntas (y otros interfaces) con AJAX
+ * p.e. usado en diretor::examen_preguntas
+	<div class="modale preguntas-examen">
+			<div class="header">
+				<div class="content"></div>
+				<button class="close">X</button>
+			</div>
+			<div class="main"><div class="content"></div></div>
+			<div class="footer"><div class="content"></div></div>
+		</div>
+ */
+.modale {
+	display: none;
+	border: 1px solid #ddd;
+	background-color: #fff;
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	bottom: 5%;
+	right: 5%;
+	z-index: 999999;
+}
+.modale > .main {		
+	overflow: auto;
+	position: absolute;
+	left: 0px;
+	top: 50px;
+	bottom: 50px;
+	right: 0px;
+	width: 100%;	
+}
+.modale > .main > .content {
+	padding: 15px;
+}
+.modale > .header {
+	border-bottom: 1px solid #ddd;
+	background-color: #eee;		
+	height: 50px;
+}
+.modale > .header > .title {
+	font-weight: bold;
+	margin-right: 60px; /* espacio para botón close */
+	height: 50px;
+	line-height:50px;
+	padding-left: 15px;
+}
+.modale > .header > .close {
+	display: inline-block;
+	cursor: pointer;
+	border-radius: 0;
+	background-color: transparent;
+	border: 0;
+	position: absolute;
+	color: #333;
+	top: 0;
+	right: 0;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+/*.modale > .header > .close:hover {*/
+.button.close:hover {
+	background-color: #c00;
+	color: #fff;
+	text-decoration: none;
+}
+.modale > .footer {
+	border-top: 1px solid #ddd;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #eee;
+	height: 50px;	
+}
+.modale > .footer  .buttons {
+	margin: 0;	
+	padding: 0;
+}
+.modale > .footer  button:hover {
+	text-shadow: none;
+	background-color: #ddd;
+}
+.modale > .footer  button {
+	font-size: 100% !important;
+	margin: 0;
+	padding: 0 1em;
+	height: 50px !important;
+	line-height: 50px;	
+	border-radius: 0;
+	border: 1px solid #ddd;	
+	border-width: 0 1px 0 0;
+}
+.modale > .footer  button.right {
+	float: right;
+	border-width: 0 0 0 1px;
+}
+
+ /**
+  * variantes
+  */	
+.modale.no-footer > .main {
+	bottom: 0;
+}	
+.modale.medium {
+	top: 10%;
+	bottom: 10%;
+	left: 10%;	
+	right: 10%;
+}
+.modale.full { /* variante para ocupar TODA la pantalla */
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+} 
+/* media queries */
+@media (max-width: 768px) {
+	.modale.medium {
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+}
